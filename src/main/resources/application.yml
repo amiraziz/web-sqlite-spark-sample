@@ -1,0 +1,24 @@
+spring:
+  servlet:
+    multipart:
+      max-request-size: 20MB
+      max-file-size: 20MB
+  datasource:
+    url: jdbc:sqlite:./webmetric.db
+    driver-class-name: org.sqlite.JDBC
+
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.DB2390Dialect
+    show-sql: true
+  sql:
+    init:
+      data-locations: classpath:data.sql
+      platform: sqlite
+      mode: always
+
+  application:
+    name: web-metric
+app:
+  spark.home: D:\Apps\spark-3.5.3-bin-hadoop3\bin
+  spark.master-uri: local
