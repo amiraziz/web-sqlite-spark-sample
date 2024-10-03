@@ -6,6 +6,9 @@ import lombok.RequiredArgsConstructor;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.expressions.Window;
+import org.apache.spark.sql.expressions.WindowSpec;
+import org.apache.spark.sql.functions;
 import org.sample.webmetric.report.ImpressionClicksMetricProjection;
 import org.sample.webmetric.report.RecommendedAdvertisersMetric;
 import org.sample.webmetric.report.RecommendedAdvertisersMetricProjection;
@@ -62,7 +65,7 @@ public class AdClickService {
             advMetric.setCountryCode(item.getCountryCode());
             advMetric.setAdvertiserIds(
                     Arrays.stream(item.getAdvertiserIds().split(","))
-                            .map(Long::parseLong).collect(Collectors.toList()).subList(0, 5));
+                            .map(Long::parseLong).collect(Collectors.toList()));
             return advMetric;
         }).collect(Collectors.toList());
     }
@@ -79,12 +82,36 @@ public class AdClickService {
         Dataset<Row> impressions = sparkSession.read().jdbc(jdbcUrl, "impression", properties);
         Dataset<Row> clicks = sparkSession.read().jdbc(jdbcUrl, "adv_click", properties);
 
-        Dataset<Row> jointTables = clicks.join(impressions, clicks.col("impression_id").equalTo(impressions.col("id")));
-        Dataset<Row> app_id__country_code__grouping =
-                jointTables
-                        .groupBy("app_id", "country_code")
-                        .df();
-        app_id__country_code__grouping.show();
+        Dataset<Row> revenuePerImpression = impressions
+                .join(impressions, impressions.col("id").equalTo(clicks.col("impression_id")))
+                .groupBy("app_id", "country_code", "advertiser_id")
+                .agg(
+                        functions.sum("revenue").alias("total_revenue"),
+                        functions.count(clicks.col("impression_id"))
+                                .alias("total_impressions"),
+                        functions.sum("revenue")
+                                .divide(functions.count(clicks.col("impression_id")))
+                                .alias("revenue_per_impression")
+                );
+
+        // Create a window specification for ranking
+        WindowSpec windowSpec =
+                Window.partitionBy("app_id", "country_code")
+                        .orderBy(functions.desc("revenue_per_impression"));
+
+        // Rank advertisers
+        Dataset<Row> rankedAdvertisers =
+                revenuePerImpression
+                        .withColumn("rank", functions.row_number().over(windowSpec));
+
+        // Select top 5 advertisers and aggregate
+        Dataset<Row> result = rankedAdvertisers
+                .filter(rankedAdvertisers.col("rank").leq(5))
+                .groupBy("app_id", "country_code")
+                .agg(functions.collect_list("advertiser_id").alias("advertiser_ids"));
+
+        // Show the result
+        result.show(false);
         return null;
     }
 }

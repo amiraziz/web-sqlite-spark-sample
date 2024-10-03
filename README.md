@@ -7,3 +7,5 @@ this project for simplifying is used sqlite database, and you can address your
 db file with parameter via command like this: 
 
 `java -Dfile.encoding=UTF8 -Dspring.datasource.url=jdbc:sqlite:C:/webmetric.db  -jar app.jar`
+
+[postman collection](test.postman_collection.json)

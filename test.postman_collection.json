@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "d2d85ca2-e664-4a3f-b007-f0117b5044c3",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23049254",
+		"_collection_link": "https://planetary-moon-192527.postman.co/workspace/KIPIT~3c81d7b7-4a19-4805-b6ff-a1532c746030/collection/23049254-d2d85ca2-e664-4a3f-b007-f0117b5044c3?action=share&source=collection_link&creator=23049254"
+	},
+	"item": [
+		{
+			"name": "report 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/report/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Oct 2024 13:05:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 2.2900304644494436,\n        \"app_id\": 1,\n        \"country_code\": \"IT\"\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 2.5103764894988396,\n        \"app_id\": 2,\n        \"country_code\": \"\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 2.6136442634380566,\n        \"app_id\": 3\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 4.425384428557671,\n        \"app_id\": 4,\n        \"country_code\": \"IT\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 0.7887114626004254,\n        \"app_id\": 5,\n        \"country_code\": \"DE\"\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 5.136533810360039,\n        \"app_id\": 5,\n        \"country_code\": \"IT\"\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 2.77440087564303,\n        \"app_id\": 6,\n        \"country_code\": \"\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 0.3566235732476115,\n        \"app_id\": 7,\n        \"country_code\": \"DE\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 0.934816649199471,\n        \"app_id\": 7,\n        \"country_code\": \"IT\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 2.012664691281706,\n        \"app_id\": 9,\n        \"country_code\": \"\"\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 2.7898515201279794,\n        \"app_id\": 9,\n        \"country_code\": \"US\"\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 1.3485013828719363,\n        \"app_id\": 10,\n        \"country_code\": \"US\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 1.7850731637876602,\n        \"app_id\": 11,\n        \"country_code\": \"US\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 1.0634141002481379,\n        \"app_id\": 13,\n        \"country_code\": \"\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 0.46322370274843294,\n        \"app_id\": 13,\n        \"country_code\": \"DE\"\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 2.6056709982975317,\n        \"app_id\": 13,\n        \"country_code\": \"US\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 2.345113915728606,\n        \"app_id\": 14,\n        \"country_code\": \"UK\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 1.6718245743726523,\n        \"app_id\": 15,\n        \"country_code\": \"\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 2.1352439722841217,\n        \"app_id\": 15,\n        \"country_code\": \"US\"\n    },\n    {\n        \"impressions\": 4,\n        \"clicks\": 4,\n        \"revenue\": 7.016602982661872,\n        \"app_id\": 16,\n        \"country_code\": \"UK\"\n    },\n    {\n        \"impressions\": 3,\n        \"clicks\": 3,\n        \"revenue\": 4.983314683686775,\n        \"app_id\": 16,\n        \"country_code\": \"US\"\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 2.7300254208815575,\n        \"app_id\": 18\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 0.3882000126616689,\n        \"app_id\": 18,\n        \"country_code\": \"DE\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 2.88042276972951,\n        \"app_id\": 18,\n        \"country_code\": \"IT\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 1.3225157276596595,\n        \"app_id\": 19,\n        \"country_code\": \"\"\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 1.1724448243238788,\n        \"app_id\": 21,\n        \"country_code\": \"DE\"\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 4.960972440042899,\n        \"app_id\": 22,\n        \"country_code\": \"DE\"\n    },\n    {\n        \"impressions\": 3,\n        \"clicks\": 3,\n        \"revenue\": 7.9703557320512886,\n        \"app_id\": 22,\n        \"country_code\": \"IT\"\n    },\n    {\n        \"impressions\": 3,\n        \"clicks\": 3,\n        \"revenue\": 4.550724600305939,\n        \"app_id\": 23,\n        \"country_code\": \"US\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 0.10522334895198328,\n        \"app_id\": 24,\n        \"country_code\": \"\"\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 3.4324553029674316,\n        \"app_id\": 24,\n        \"country_code\": \"UK\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 2.1539865559448788,\n        \"app_id\": 25,\n        \"country_code\": \"\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 1.8493484682417043,\n        \"app_id\": 25,\n        \"country_code\": \"UK\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 1.5881180469456961,\n        \"app_id\": 26,\n        \"country_code\": \"DE\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 2.7308513459262533,\n        \"app_id\": 27\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 0.5820968985377619,\n        \"app_id\": 27,\n        \"country_code\": \"IT\"\n    },\n    {\n        \"impressions\": 6,\n        \"clicks\": 6,\n        \"revenue\": 6.428984961873307,\n        \"app_id\": 28\n    },\n    {\n        \"impressions\": 4,\n        \"clicks\": 4,\n        \"revenue\": 8.327080257719407,\n        \"app_id\": 28,\n        \"country_code\": \"US\"\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 3.6607161305123017,\n        \"app_id\": 29\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 2.123201269043838,\n        \"app_id\": 30\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 4.58964392598506,\n        \"app_id\": 30,\n        \"country_code\": \"DE\"\n    },\n    {\n        \"impressions\": 6,\n        \"clicks\": 6,\n        \"revenue\": 5.911653752697605,\n        \"app_id\": 30,\n        \"country_code\": \"US\"\n    },\n    {\n        \"impressions\": 4,\n        \"clicks\": 4,\n        \"revenue\": 2.277710204463634,\n        \"app_id\": 33\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 1.8534789639020717,\n        \"app_id\": 33,\n        \"country_code\": \"US\"\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 3.698559430302519,\n        \"app_id\": 34,\n        \"country_code\": \"DE\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 0.24294155968937495,\n        \"app_id\": 35,\n        \"country_code\": \"IT\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 0.9545479001418805,\n        \"app_id\": 36\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 1.8015455267890215,\n        \"app_id\": 38,\n        \"country_code\": \"\"\n    },\n    {\n        \"impressions\": 2,\n        \"clicks\": 2,\n        \"revenue\": 2.5965094550715007,\n        \"app_id\": 38,\n        \"country_code\": \"IT\"\n    },\n    {\n        \"impressions\": 1,\n        \"clicks\": 1,\n        \"revenue\": 1.319780897610233,\n        \"app_id\": 39,\n        \"country_code\": \"US\"\n    },\n    {\n        \"impressions\": 4,\n        \"clicks\": 4,\n        \"revenue\": 5.879892129996195,\n        \"app_id\": 40,\n        \"country_code\": \"DE\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "report 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/report/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "report 2 spark",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/report/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "impression files upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/Docs/Project/webmetric/web-metric/src/main/resources/impressions.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/impression/files/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"impression",
+						"files",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ad-click files upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/Docs/Project/webmetric/web-metric/src/main/resources/impressions.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/ad-click/files/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ad-click",
+						"files",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

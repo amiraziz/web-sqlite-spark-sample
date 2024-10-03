@@ -19,14 +19,26 @@ public interface AdClickRepo extends JpaRepository<AdClick, String> {
     List<ImpressionClicksMetricProjection> calculateMetrics();
 
     @Query(value = """
-            select imp.app_id                                   as appId,
-                   imp.country_code                             as countryCode,
-                   sum(cl.revenue) / count(imp.id)              as ratio,
-                   group_concat(distinct imp.advertiser_id)     as advertiserIds
-                from adv_click cl
-                         join impression imp on cl.impression_id = imp.id
-                group by imp.app_id, imp.country_code
-                order by ratio desc
+            SELECT t2.app_id appId,
+                   t2.country_code countryCode,
+                   group_concat(t2.advertiser_id, ',') AS advertiserIds
+             FROM (SELECT t1.app_id,
+                          t1.country_code,
+                          t1.advertiser_id,
+                          t1.revenue_per_impression,
+                          ROW_NUMBER() OVER (PARTITION BY app_id, country_code ORDER BY t1.revenue_per_impression DESC) AS rank
+                   FROM (SELECT i.app_id,
+                                i.country_code,
+                                i.advertiser_id,
+                                SUM(ac.revenue) / coalesce(COUNT(i.id), 0) AS revenue_per_impression
+                         FROM impression i
+                                  JOIN
+                              adv_click ac ON i.id = ac.impression_id
+                         GROUP BY i.app_id,
+                                  i.country_code,
+                                  i.advertiser_id) t1) as t2
+             WHERE t2.rank <= 5
+             GROUP BY app_id, country_code
                 """, nativeQuery = true)
     List<RecommendedAdvertisersMetricProjection> findTop5AdvByAppIdAndCountry();
 }
